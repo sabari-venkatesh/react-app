@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <title>Document</title>
+  <base href="/" />
   <style>
     * {
       margin: 0;
@@ -13,7 +17,24 @@
     }
   </style>
 </head>
+
 <body>
   <div id="app"></div>
+  <script>
+    // if ('serviceWorker' in navigator) {
+    //   window.addEventListener('load', () => {
+    //     navigator.serviceWorker.register('service-worker.js').then((registration) => {
+    //       console.log('Service Worker registration successful', registration.scope);
+    //     }, (err) => {
+    //       console.log('Service Worker registration failed', err);
+    //     }).catch((err) => {
+    //       console.log(err);
+    //     });
+    //   });
+    // } else {
+    //   console.log('Service Worker is not supported by browser.');
+    // }
+  </script>
 </body>
+
 </html>

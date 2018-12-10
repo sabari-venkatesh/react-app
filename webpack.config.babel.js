@@ -1,32 +1,28 @@
-import path from 'path';
-import HTMLwebpackplugin from 'html-webpack-plugin';
+import path from "path";
 
 const config = {
-  context: path.resolve(__dirname, 'src'),
-  entry: './index.js',
-  mode: 'development',
+  context: path.resolve(__dirname, "src"),
+  entry: "./client.js",
+  mode: "development",
+  target: "node",
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: "babel-loader"
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
   output: {
-    filename: '[name].[hash:4].js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  plugins: [
-    new HTMLwebpackplugin({
-      filename: 'index.html',
-      title: 'Welcome to React starter kit',
-      hash: true,
-      template: './index.html',
-      inject: 'body'
-    })
-  ]
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist")
+  }
 };
 
 export default config;
